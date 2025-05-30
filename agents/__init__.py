@@ -1,1 +1,0 @@
-# Pacote de agentes para arquitetura multi-agente 

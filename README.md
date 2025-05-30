@@ -1,297 +1,337 @@
-# Sistema Multi-Agente em Python
+# 🤖 Sistema Multi-Agente - Demonstração Visual
 
-Este projeto implementa uma arquitetura multi-agente baseada no diagrama fornecido, demonstrando como diferentes agentes especializados podem trabalhar em conjunto para processar tarefas complexas de forma coordenada.
+Uma demonstração interativa e educativa de um sistema multi-agente com interface web moderna, desenvolvida para apresentações acadêmicas.
+
+## ✨ Funcionalidades Principais
+
+### 🎯 Sistema Multi-Agente Completo
+
+- **Planner Agent** 🎯: Analisa e decompõe tarefas complexas
+- **Execution Agent** ⚙️: Executa as subtarefas do plano
+- **Verification Agent** ✅: Verifica qualidade e precisão dos resultados
+
+### 📊 Interface Visual Interativa
+
+- **Diagrama da Arquitetura**: Visualização em tempo real dos agentes ativos
+- **Métricas Dinâmicas**: Taxa de sucesso, tempo médio, re-planejamentos
+- **Gráficos Interativos**: Performance dos agentes e status das tarefas
+- **Timeline de Execução**: Histórico visual das tarefas processadas
+
+### 📋 Sistema de Logs Detalhados
+
+- **Logs em Tempo Real**: Registro de todas as etapas de execução
+- **Detalhes de Processamento**: Ações específicas, resultados e retornos
+- **Cenários de Erro Realistas**: Simulação de falhas com motivos detalhados
+- **Filtros Avançados**: Por nível (sucesso, erro, aviso, info) e agente
+- **Estatísticas dos Logs**: Contadores e métricas dos eventos registrados
+
+### 🎬 Execução Manual Intuitiva
+
+- **Seleção de Tarefas**: 8 tipos diferentes de tarefas para demonstrar
+- **Controle de Complexidade**: Simples, Média ou Complexa
+- **Processamento Visual**: Acompanhe cada etapa em tempo real
+- **Animações CSS**: Efeitos visuais para destacar agentes ativos
 
 ## 🏗️ Arquitetura
 
-O sistema é composto por três agentes principais que seguem o fluxo mostrado na imagem:
+O sistema demonstra o fluxo de trabalho de um sistema multi-agente:
 
 ```
-Requests/Tasks/Goals → Planner Agent → Execution Agent → Verification Agent → Completed Tasks
-                           ↑                                      ↓
-                           └─────── Re-planning ←─────────────────┘
+📥 Entrada → 🎯 Planner → ⚙️ Execution → ✅ Verification → 📤 Saída
+              ↑                                    ↓
+              └─────── 🔄 Re-planning ←─────────────┘
 ```
 
-### 🤖 Agentes
+## 🚀 Como Usar
 
-#### 📋 Planner Agent
+### Pré-requisitos
 
-- **Responsabilidade**: Quebra problemas complexos em subtarefas executáveis
-- **Capacidades**:
-  - Análise de complexidade de tarefas
-  - Decomposição em subtarefas
-  - Análise de dependências
-  - Estimativa de tempo
-  - Estratégias de planejamento (sequencial, paralelo, híbrido)
+```bash
+pip install streamlit plotly pandas
+```
 
-#### ⚙️ Execution Agent
+### Executar a Demonstração Web
 
-- **Responsabilidade**: Executa as subtarefas definidas no plano
-- **Capacidades**:
-  - Execução de diferentes tipos de tarefas
-  - Geração de código
-  - Manipulação de arquivos
-  - Integração com APIs
-  - Operações de banco de dados
-  - Execução de testes
+```bash
+streamlit run visual_demo.py
+```
 
-#### ✅ Verification Agent
+## 🔍 Logs Detalhados
 
-- **Responsabilidade**: Verifica qualidade e precisão dos resultados
-- **Capacidades**:
-  - Avaliação de qualidade
-  - Verificação de precisão
-  - Revisão de código
-  - Análise de performance
-  - Verificação de conformidade
-  - Detecção de erros
+### O que é registrado:
 
-## 🚀 Funcionalidades
+- **Início de cada etapa**: Ação específica sendo executada
+- **Resultados detalhados**: Retornos realistas de cada operação
+- **Erros e falhas**: Motivos específicos com detalhes técnicos
+- **Soluções aplicadas**: Como o sistema resolve problemas
+- **Métricas de tempo**: Duração de cada fase
 
-- **Planejamento Inteligente**: Análise automática de complexidade e escolha de estratégia
-- **Execução Coordenada**: Respeita dependências entre subtarefas
-- **Verificação Automática**: Avalia qualidade e precisão dos resultados
-- **Re-planejamento Adaptativo**: Ajusta planos baseado em problemas encontrados
-- **Métricas Detalhadas**: Acompanha performance de agentes e sistema
-- **Logging Completo**: Registra todas as atividades dos agentes
+### Exemplos de logs:
+
+```
+✅ [19:43:18] Planner Agent → Desenvolver API REST
+   📄 Concluído: Análise inicial da tarefa
+   🔍 Resultado: Tarefa classificada como complexidade MÉDIA |
+       Identificados 4 módulos principais necessários
+
+❌ [19:43:20] Execution Agent → Criar Dashboard Analytics
+   📄 ERRO: Falha na conexão com API externa
+   🔍 Detalhes: API de pagamentos retornou erro 503 - Service Unavailable
+
+⚠️ [19:43:20] Sistema → Criar Dashboard Analytics
+   📄 Iniciando processo de correção
+   🔍 Solução aplicada: Implementação de retry com backoff exponencial
+```
+
+### Filtros disponíveis:
+
+- **Por nível**: Sucessos, erros, avisos, informações
+- **Por agente**: Planner, Execution, Verification, Sistema
+- **Limpeza**: Botão para resetar todos os logs
+
+## 🎓 Guia de Apresentação
+
+### 📋 Visão Geral
+
+Este guia te ajudará a apresentar o sistema multi-agente de forma visual e impactante para sua turma da faculdade usando uma **demonstração web interativa moderna** com recursos avançados de visualização.
+
+### 📦 Preparação (5 minutos antes)
+
+1. **Execute o comando** `streamlit run visual_demo.py`
+2. **Abra o navegador** na URL (geralmente `http://localhost:8501`)
+3. **Teste uma tarefa** para verificar se tudo funciona
+
+### 🎤 Roteiro de Apresentação Sugerido (15-20 minutos)
+
+#### 1. Introdução (2-3 minutos)
+
+```
+"Hoje vou demonstrar um sistema multi-agente que implementa
+a arquitetura coordenada mostrada aqui. O sistema usa três
+agentes especializados que trabalham em conjunto para
+processar tarefas complexas de forma inteligente."
+```
+
+**🎯 Pontos-chave:**
+
+- Mostre o **diagrama da arquitetura** na tela
+- Explique o conceito de **especialização** dos agentes
+- Destaque a **coordenação** entre eles
+
+#### 2. Arquitetura do Sistema (3-4 minutos)
+
+```
+"Vamos ver como cada agente tem uma responsabilidade específica:
+- 🎯 Planner Agent: Analisa e decompõe tarefas complexas
+- ⚙️ Execution Agent: Executa as subtarefas do plano
+- ✅ Verification Agent: Verifica qualidade e precisão"
+```
+
+**🎯 Pontos-chave:**
+
+- Mostre os **cards dos agentes** no sidebar
+- Destaque o processo de **re-planejamento**
+
+#### 3. Demonstração Prática (8-12 minutos)
+
+**Execute tarefas manualmente para mostrar diferentes cenários:**
+
+1. **Tarefa Simples** - "Implementar Sistema de Login" (Complexidade: Simples)
+2. **Tarefa Média** - "Desenvolver API REST" (Complexidade: Média)
+3. **Tarefa Complexa** - "Integração com API Externa" (Complexidade: Complexa)
+
+**🎯 Durante a execução, comente:**
+
+- "Vejam como o Planner Agent está analisando..."
+- "Agora o Execution Agent está implementando..."
+- "O Verification Agent está verificando a qualidade..."
+- "Observem as métricas sendo atualizadas..."
+
+#### 4. Análise dos Resultados (3-4 minutos)
+
+```
+"Agora vamos analisar as métricas coletadas e os
+benefícios desta arquitetura coordenada."
+```
+
+**🎯 Destaque:**
+
+- **Taxa de sucesso** das tarefas
+- **Eventos de re-planejamento**
+- **Performance dos agentes**
+- **Timeline de execução**
+- **Logs detalhados** de cada etapa
+
+#### 5. Conceitos Acadêmicos (2-3 minutos)
+
+```
+"Esta implementação demonstra vários conceitos fundamentais
+da área de sistemas multi-agente e inteligência artificial."
+```
+
+**🎓 Conceitos demonstrados:**
+
+- **🏗️ Arquitetura Multi-Agente** - Coordenação de agentes especializados
+- **🤝 Comunicação Inter-Agente** - Troca de informações estruturadas
+- **🧠 Planejamento Inteligente** - Decomposição automática de problemas
+- **🔄 Adaptação Dinâmica** - Re-planejamento baseado em feedback
+- **📊 Monitoramento Contínuo** - Métricas e análise de performance
+- **✅ Controle de Qualidade** - Verificação automática de resultados
+
+## 💡 Dicas para uma Apresentação Impactante
+
+### 🎯 Preparação
+
+- [ ] **Teste a demo** completamente antes da apresentação
+- [ ] **Prepare exemplos** de tarefas relevantes para sua área de estudo
+- [ ] **Tenha backup** (screenshots) caso algo dê errado
+- [ ] **Pratique o timing** - 15-20 minutos total é ideal
+- [ ] **Prepare respostas** para perguntas frequentes
+
+### 🗣️ Durante a Apresentação
+
+- **📊 Destaque as métricas** - Mostre os números em tempo real
+- **🎨 Aproveite as animações** - Deixe a turma ver os agentes trabalhando
+- **🤝 Seja interativo** - Pergunte que tipo de tarefa querem ver
+- **🎓 Conecte com a teoria** - Relacione com conceitos vistos em aula
+
+### 📊 Elementos Visuais que Impressionam
+
+1. **🔥 Agentes Ativos** - Cards que mudam de cor quando processando
+2. **📈 Gráficos Dinâmicos** - Métricas atualizando em tempo real
+3. **⏱️ Timeline Visual** - Histórico das tarefas executadas
+4. **🎯 Diagrama Interativo** - Arquitetura com destaque do agente ativo
+5. **🎊 Animações de Sucesso** - Balões quando tarefa é concluída
+6. **⚠️ Re-planejamento** - Demonstração visual quando algo dá errado
+
+## 🔧 Solução de Problemas
+
+### Problema: Streamlit não abre
+
+```bash
+# Verificar se está instalado
+pip install streamlit
+
+# Tentar porta diferente
+streamlit run visual_demo.py --server.port 8502
+
+# Verificar firewall/antivírus
+```
+
+### Problema: Dependências faltando
+
+```bash
+# Instalar todas as dependências
+pip install -r requirements.txt
+
+# Verificar versões específicas
+pip install streamlit==1.28.1 plotly==5.17.0 pandas==2.1.3
+```
+
+### Problema: Demo muito lenta
+
+- **Reduza a complexidade** das tarefas
+- **Feche outras aplicações** para liberar recursos
+
+## 📚 Perguntas Frequentes da Turma
+
+### "Por que usar múltiplos agentes em vez de um sistema monolítico?"
+
+**Resposta:**
+
+- **🎯 Especialização** - Cada agente é otimizado para sua função específica
+- **🔄 Manutenibilidade** - Mais fácil de manter e atualizar componentes
+- **📈 Escalabilidade** - Fácil adicionar novos agentes ou capacidades
+- **🛡️ Robustez** - Se um agente falha, outros podem compensar
+- **⚡ Paralelização** - Tarefas podem ser executadas simultaneamente
+
+### "Como os agentes se comunicam entre si?"
+
+**Resposta:**
+
+- **📋 Mensagens estruturadas** - Usando modelos de dados bem definidos
+- **🎛️ Coordenação central** - O sistema principal orquestra o fluxo
+- **📊 Estado compartilhado** - Informações são passadas entre agentes
+- **🔄 Feedback loops** - Agentes podem solicitar re-planejamento
+
+### "O que acontece quando um agente falha ou encontra problemas?"
+
+**Resposta:**
+
+- **🔍 Detecção automática** - Sistema monitora status dos agentes
+- **🔄 Re-planejamento** - Planner Agent ajusta estratégia automaticamente
+- **🛠️ Recuperação** - Tentativas de correção e ajuste do plano
+- **📊 Métricas** - Tudo é registrado para análise posterior
+
+### "Quais são as aplicações práticas desta arquitetura?"
+
+**Resposta:**
+
+- **🤖 Sistemas de automação** industrial
+- **🏥 Diagnóstico médico** assistido
+- **🚗 Veículos autônomos** (coordenação de sensores)
+- **💰 Trading algorítmico** (análise, execução, verificação)
+- **🎮 NPCs inteligentes** em jogos
+- **🏭 Otimização de processos** produtivos
+
+## 🎓 Conceitos Acadêmicos Demonstrados
+
+- **Arquitetura Multi-Agente**: Coordenação entre agentes especializados
+- **Planejamento Hierárquico**: Decomposição de tarefas complexas
+- **Verificação de Qualidade**: Controle automatizado de resultados
+- **Re-planejamento Adaptativo**: Recuperação de falhas
+- **Monitoramento em Tempo Real**: Observabilidade do sistema
+- **Transparência de Execução**: Logs detalhados para auditoria
 
 ## 📁 Estrutura do Projeto
 
 ```
 multi-agent-arc/
-├── models.py                    # Modelos de dados (Task, Plan, Results, etc.)
-├── agents/
-│   ├── __init__.py
-│   ├── base_agent.py           # Classe base para todos os agentes
-│   ├── planner_agent.py        # Agente de planejamento
-│   ├── execution_agent.py      # Agente de execução
-│   └── verification_agent.py   # Agente de verificação
-├── multi_agent_system.py       # Sistema principal que coordena os agentes
-├── example_demo.py             # Demonstração completa do sistema
-├── requirements.txt            # Dependências do projeto
-└── README.md                   # Este arquivo
+├── visual_demo.py           # Demonstração web principal
+├── requirements.txt         # Dependências
+└── README.md               # Este arquivo (documentação completa)
 ```
 
-## 🛠️ Instalação
+## 🛠️ Tecnologias Utilizadas
 
-1. **Clone o repositório**:
+- **Streamlit**: Interface web interativa
+- **Plotly**: Gráficos e visualizações dinâmicas
+- **Pandas**: Manipulação de dados
+- **Python**: Lógica do sistema multi-agente
+
+## 🎯 Ideal Para
+
+- **Apresentações acadêmicas** sobre sistemas multi-agente
+- **Demonstrações técnicas** de coordenação entre agentes
+- **Ensino de conceitos** de inteligência artificial distribuída
+- **Workshops** sobre arquiteturas de software
+
+## 🔧 Personalização
+
+O sistema é facilmente personalizável:
+
+- Adicione novos tipos de agentes
+- Modifique cenários de erro
+- Customize a interface visual
+- Expanda os logs com mais detalhes
+
+## 🧪 Testando o Sistema
+
+### Teste Completo da Interface Web
 
 ```bash
-git clone <repository-url>
-cd multi-agent-arc
+streamlit run visual_demo.py
 ```
 
-2. **Instale as dependências**:
+### Verificar Dependências
 
 ```bash
-pip install -r requirements.txt
+python -c "import streamlit, plotly, pandas; print('✅ Todas as dependências OK!')"
 ```
 
-## 🎯 Como Usar
+## 👥 Autores
 
-### Exemplo Básico
+**Acadêmicos:**
 
-```python
-from datetime import datetime
-from models import Task, TaskPriority, TaskStatus
-from multi_agent_system import MultiAgentSystem
-
-# Criar sistema multi-agente
-system = MultiAgentSystem()
-
-# Criar uma tarefa
-task = Task(
-    id="",
-    title="Desenvolver API REST",
-    description="Criar API completa para gerenciamento de usuários",
-    priority=TaskPriority.HIGH,
-    status=TaskStatus.PENDING,
-    created_at=datetime.now(),
-    updated_at=datetime.now(),
-    requirements=[
-        "Endpoints CRUD",
-        "Autenticação JWT",
-        "Documentação",
-        "Testes"
-    ],
-    expected_output="API funcional com documentação"
-)
-
-# Processar a tarefa
-result = system.process_task(task)
-
-# Verificar resultado
-if result['status'] == 'completed':
-    print(f"✅ Tarefa concluída!")
-    print(f"Qualidade: {result['verification']['quality_score']:.2f}")
-    print(f"Precisão: {result['verification']['accuracy_score']:.2f}")
-```
-
-### Demonstração Completa
-
-Execute o exemplo de demonstração para ver o sistema em ação:
-
-```bash
-python example_demo.py
-```
-
-Este exemplo demonstra:
-
-- Processamento de tarefa única
-- Processamento de múltiplas tarefas
-- Processo de re-planejamento
-- Métricas e análises detalhadas
-
-## 📊 Tipos de Tarefas Suportadas
-
-O sistema pode processar diferentes tipos de tarefas:
-
-- **Análise**: Levantamento de requisitos, análise de stakeholders
-- **Design**: Arquitetura de sistema, prototipagem
-- **Implementação**: Desenvolvimento de código, criação de módulos
-- **Testes**: Testes unitários, integração, end-to-end
-- **Documentação**: Manuais técnicos, documentação de API
-- **Setup**: Configuração de ambiente, instalação de ferramentas
-- **Integração**: Conexão entre módulos, APIs externas
-- **Otimização**: Melhoria de performance, refatoração
-
-## 🔄 Fluxo de Processamento
-
-1. **Recebimento da Tarefa**: Sistema recebe uma tarefa com requisitos
-2. **Planejamento**: Planner Agent analisa e cria plano de subtarefas
-3. **Execução**: Execution Agent executa subtarefas respeitando dependências
-4. **Verificação**: Verification Agent avalia qualidade e precisão
-5. **Decisão**: Se passou na verificação → Concluído, senão → Re-planejamento
-6. **Re-planejamento**: Ajusta plano baseado nos problemas encontrados
-7. **Repetição**: Volta ao passo 3 até sucesso ou limite de tentativas
-
-## 📈 Métricas e Monitoramento
-
-O sistema coleta métricas detalhadas:
-
-### Métricas do Sistema
-
-- Taxa de sucesso geral
-- Tempo médio de conclusão
-- Taxa de re-planejamento
-- Número de tarefas processadas
-
-### Métricas dos Agentes
-
-- Tarefas completadas por agente
-- Taxa de sucesso individual
-- Tempo médio de execução
-- Performance histórica
-
-### Métricas de Verificação
-
-- Score de qualidade (0.0 - 1.0)
-- Score de precisão (0.0 - 1.0)
-- Problemas identificados
-- Recomendações geradas
-
-## 🎛️ Configuração
-
-### Thresholds de Qualidade
-
-Você pode ajustar os critérios de qualidade no `VerificationAgent`:
-
-```python
-quality_thresholds = {
-    "minimum_quality_score": 0.7,
-    "minimum_accuracy_score": 0.8,
-    "maximum_error_rate": 0.1,
-    "performance_threshold": 2.0
-}
-```
-
-### Estratégias de Planejamento
-
-O `PlannerAgent` suporta três estratégias:
-
-- **Sequential**: Subtarefas executadas em sequência
-- **Parallel**: Algumas subtarefas podem ser executadas em paralelo
-- **Hybrid**: Combina abordagens sequencial e paralela para tarefas complexas
-
-## 🧪 Testes
-
-Para testar o sistema:
-
-```bash
-# Executar demonstração completa
-python example_demo.py
-
-# Testar componentes individuais
-python -c "from agents.planner_agent import PlannerAgent; print('Planner OK')"
-python -c "from agents.execution_agent import ExecutionAgent; print('Executor OK')"
-python -c "from agents.verification_agent import VerificationAgent; print('Verifier OK')"
-```
-
-## 🔧 Extensibilidade
-
-### Adicionando Novos Tipos de Execução
-
-Para adicionar suporte a novos tipos de tarefas no `ExecutionAgent`:
-
-```python
-def _execute_new_type(self, subtask: SubTask) -> Dict[str, Any]:
-    """Executa novo tipo de tarefa"""
-    # Implementar lógica específica
-    return {
-        "type": "new_type",
-        "result": "resultado da execução"
-    }
-
-# Adicionar ao dicionário de estratégias
-self.execution_strategies["novo_tipo"] = self._execute_new_type
-```
-
-### Adicionando Novos Critérios de Verificação
-
-Para adicionar novos critérios no `VerificationAgent`:
-
-```python
-def _verify_new_type(self, result: ExecutionResult) -> Dict[str, Any]:
-    """Verifica novo tipo de resultado"""
-    # Implementar critérios específicos
-    return {
-        "result_id": result.id,
-        "quality_score": score,
-        "accuracy_score": accuracy,
-        "issues": issues,
-        "type": "new_type"
-    }
-
-# Adicionar ao dicionário de critérios
-self.verification_criteria["new_type"] = self._verify_new_type
-```
-
-## 🤝 Contribuição
-
-1. Fork o projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/nova-feature`)
-3. Commit suas mudanças (`git commit -am 'Adiciona nova feature'`)
-4. Push para a branch (`git push origin feature/nova-feature`)
-5. Abra um Pull Request
-
-## 📝 Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
-
-## 🎯 Casos de Uso
-
-Este sistema multi-agente pode ser aplicado em diversos cenários:
-
-- **Desenvolvimento de Software**: Automação de ciclo de desenvolvimento
-- **Análise de Dados**: Pipeline de processamento e análise
-- **DevOps**: Automação de deploy e monitoramento
-- **Gestão de Projetos**: Decomposição e execução de projetos complexos
-- **Controle de Qualidade**: Verificação automática de deliverables
-
-## 📞 Suporte
-
-Para dúvidas, sugestões ou problemas:
-
-- Abra uma issue no GitHub
-- Consulte a documentação dos agentes individuais
-- Execute os exemplos de demonstração para entender o funcionamento
+- **Arthur Henrique Tscha Vieira**
+- **Rafael Rodrigues Ferreira de Andrade**
